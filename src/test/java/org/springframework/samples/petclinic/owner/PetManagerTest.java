@@ -5,9 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.invocation.InvocationOnMock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.mockito.stubbing.Answer;
 import org.slf4j.Logger;
 import org.springframework.samples.petclinic.utility.PetTimedCache;
 import org.springframework.samples.petclinic.visit.Visit;
@@ -21,7 +19,6 @@ import static org.mockito.Mockito.when;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// TODO: Complete this for each test.
 /*
 * For each test that has been written, the following has been commented.
 * Type of Test Doubles: Dummy Object, Test Stub, Test Spy, Mock Object or Fake Object
@@ -32,6 +29,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(MockitoExtension.class)
 class PetManagerTest {
 	private PetManager petManager;
+	// Dummy Objects if not specified later in each test
 	@Mock PetTimedCache petTimedCache;
 	@Mock OwnerRepository ownerRepository;
 	@Mock Logger logger;
