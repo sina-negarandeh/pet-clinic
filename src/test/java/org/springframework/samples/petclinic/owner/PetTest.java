@@ -32,10 +32,11 @@ public class PetTest {
 
 	@Theory
 	public void shouldGetVisits(Visit firstVisit, Visit secondVisit, Visit thirdVisit) {
+		LocalDate date = LocalDate.of(2021, 10, 27);
 		Assume.assumeTrue(
-			firstVisit.getDate().isBefore(LocalDate.now()) &&
-				secondVisit.getDate().isBefore(LocalDate.now()) &&
-				thirdVisit.getDate().isBefore(LocalDate.now())
+			firstVisit.getDate().isBefore(date) &&
+				secondVisit.getDate().isBefore(date) &&
+				thirdVisit.getDate().isBefore(date)
 		);
 
 		Pet pet = new Pet();
