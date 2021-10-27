@@ -50,7 +50,7 @@ class PetManagerTest {
 
 
 	/*
-	* Type of Test Doubles: Dummy Object, Test Stub, Test Spy, Mock Object or Fake Object
+	* Type of Test Doubles: Dummy Object, Mock Object
 	* TDD style: Mockist Testing
 	* Philosophy of Testing: State Verification
 	* */
@@ -86,7 +86,7 @@ class PetManagerTest {
 
 
 	/*
-	 * Type of Test Doubles: Dummy Object, Test Stub, Test Spy, Mock Object or Fake Object
+	 * Type of Test Doubles: Dummy Object, Test Spy
 	 * TDD style: Mockist Testing
 	 * Philosophy of Testing: Behavior Verification
 	 * */
@@ -106,7 +106,7 @@ class PetManagerTest {
 
 
 	/*
-	 * Type of Test Doubles: Dummy Object, Test Stub, Test Spy, Mock Object or Fake Object
+	 * Type of Test Doubles: Dummy Object
 	 * TDD style: Mockist Testing
 	 * Philosophy of Testing: State Verification
 	 * */
@@ -123,7 +123,7 @@ class PetManagerTest {
 
 
 	/*
-	 * Type of Test Doubles: Dummy Object, Test Stub, Test Spy, Mock Object or Fake Object
+	 * Type of Test Doubles: Dummy Object, Test Spy
 	 * TDD style: Mockist Testing
 	 * Philosophy of Testing: Behavior Verification
 	 * */
@@ -143,7 +143,7 @@ class PetManagerTest {
 
 
 	/*
-	 * Type of Test Doubles: Dummy Object, Test Stub, Test Spy, Mock Object or Fake Object
+	 * Type of Test Doubles: Dummy Object, Mock Object
 	 * TDD style: Mockist Testing
 	 * Philosophy of Testing: State Verification
 	 * */
@@ -175,7 +175,7 @@ class PetManagerTest {
 
 
 	/*
-	 * Type of Test Doubles: Dummy Object, Test Stub, Test Spy, Mock Object or Fake Object
+	 * Type of Test Doubles: Dummy Object, Test Spy
 	 * TDD style: Mockist Testing
 	 * Philosophy of Testing: Behavior Verification
 	 * */
@@ -197,7 +197,7 @@ class PetManagerTest {
 
 
 	/*
-	 * Type of Test Doubles: Dummy Object, Test Stub, Test Spy, Mock Object or Fake Object
+	 * Type of Test Doubles: Dummy Object, Test Spy
 	 * TDD style: Mockist Testing
 	 * Philosophy of Testing: Behavior Verification
 	 * */
@@ -221,7 +221,7 @@ class PetManagerTest {
 
 
 	/*
-	 * Type of Test Doubles: Dummy Object, Test Stub, Test Spy, Mock Object or Fake Object
+	 * Type of Test Doubles: Dummy Object, Test Stub
 	 * TDD style: Mockist Testing
 	 * Philosophy of Testing: State Verification
 	 * */
@@ -251,7 +251,7 @@ class PetManagerTest {
 
 
 	/*
-	 * Type of Test Doubles: Dummy Object, Test Stub, Test Spy, Mock Object or Fake Object
+	 * Type of Test Doubles: Dummy Object, Test Stub, Test Spy
 	 * TDD style: Mockist Testing
 	 * Philosophy of Testing: Behavior Verification
 	 * */
@@ -276,7 +276,7 @@ class PetManagerTest {
 
 
 	/*
-	 * Type of Test Doubles: Dummy Object, Test Stub, Test Spy, Mock Object or Fake Object
+	 * Type of Test Doubles: Dummy Object, Test Stub
 	 * TDD style: Mockist Testing
 	 * Philosophy of Testing: State Verification
 	 * */
@@ -317,7 +317,7 @@ class PetManagerTest {
 
 
 	/*
-	 * Type of Test Doubles: Dummy Object, Test Stub, Test Spy, Mock Object or Fake Object
+	 * Type of Test Doubles: Dummy Object, Test Stub, Test Spy
 	 * TDD style: Mockist Testing
 	 * Philosophy of Testing: Behavior Verification
 	 * */
@@ -342,7 +342,7 @@ class PetManagerTest {
 
 
 	/*
-	 * Type of Test Doubles: Dummy Object, Test Stub, Test Spy, Mock Object or Fake Object
+	 * Type of Test Doubles: Dummy Object, Test Stub
 	 * TDD style: Mockist Testing
 	 * Philosophy of Testing: State Verification
 	 * */
@@ -390,7 +390,7 @@ class PetManagerTest {
 
 
 	/*
-	 * Type of Test Doubles: Dummy Object, Test Stub, Test Spy, Mock Object or Fake Object
+	 * Type of Test Doubles: Dummy Object, Test Stub, Test Spy
 	 * TDD style: Mockist Testing
 	 * Philosophy of Testing: Behavior Verification
 	 * */
