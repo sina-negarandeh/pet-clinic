@@ -115,12 +115,63 @@ class TriCongruenceTest {
 	}
 
 	/**
-	 * TODO
-	 * explain your answer here
+	 * explanation of why CUTPNFP doesn't subsume UTPC
+	 *
+	 * For TriCongruence method:
+	 *
+	 * UTPC: Given minimal DNF representations of a predicate f and its negation f', TR contains a unique true point for each implicant in f and f'.
+	 * f = a + b + c
+	 * f' = a'b'c'
+	 * Implicants: {a, b, c, a'b'c'}
+	 * Unique true point: {a: TFF, b: FTF, c: FFT, a'b'c': FFF}
+	 *
+	 * CUTPNFP: Given a minimal DNF representation of a predicate f, for each clause c in each implicant i, TR contains a unique true point for i and a near false point for c such that the points differ only in the truth value of c.
+	 * Implicants: {a, b, c}
+	 * unique true points: {TFF, FTF, FFT} near false points: {FFF}
+	 *
+	 * Explanation with example:
+	 *
+	 * Consider f = ab + bc'
+	 * UTPC: f = ab + bc' and f' = b' + a'c
+	 * Implicants: {ab, bc', b', a'c}
+	 * Unique true points: {ab: {TTT}, bc': {FTF}, b': {FFF, TFF, TFT}, ac': {FTT}}
+	 * Set: {TTT, FTF, FFF, TFF, TFT, FTT}
+	 *
+	 * CUTPNFP: f = ab + bc'
+	 * Implicants: {ab, bc'}
+	 * unique true points: {ab: {TTT}, bc': {FTF}}
+	 * near false points: {a: {FTT}, b: {TFT, FFF}, c': {FTT}} -> FTT is duplicate
+	 * Set: {TTT, FTF, FTT, TFT, FFF}
+	 *
+	 * UTPC needs 6 tests but CUTPNFP needs 5 (TFF is not covered), so UTPC is not covered in CUTPNFP and hence CUTPNFP doesn't subsume UTPC
 	 */
-	private static boolean questionTwo(boolean a, boolean b, boolean c, boolean d, boolean e) {
-		boolean predicate = false;
-//		predicate = a predicate with any number of clauses
+
+	@Test
+	public void question2TestCaseWithUTPC() {
+		Assertions.assertTrue(question2(true, true, true));
+		Assertions.assertTrue(question2(false, true, false));
+		Assertions.assertTrue(question2Negate(false, false, false));
+		Assertions.assertTrue(question2Negate(true, false, false));
+		Assertions.assertTrue(question2Negate(true, false, true));
+		Assertions.assertTrue(question2Negate(false, true, true));
+	}
+
+	@Test
+	public void question2TestCaseWithCUTPNFP() {
+		Assertions.assertTrue(question2(true, true, true));
+		Assertions.assertTrue(question2(false, true, false));
+		Assertions.assertFalse(question2(false, false, false));
+		Assertions.assertFalse(question2(true, false, false));
+		Assertions.assertFalse(question2(false, true, true));
+	}
+
+	private static boolean question2Negate(boolean a, boolean b, boolean c) {
+		boolean predicate = (!b) || (!a && c);
+		return predicate;
+	}
+
+	private static boolean question2(boolean a, boolean b, boolean c) {
+		boolean predicate = (a && b) || (b && !c);
 		return predicate;
 	}
 }
