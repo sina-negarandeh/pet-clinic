@@ -94,4 +94,53 @@ class PetControllerTests {
 		.andExpect(model().attributeHasNoErrors("owner"))
 		.andExpect(status().isOk());
 	}
+
+	@Test
+	void Given_SendingGETRequest_When_InitEditForm_Then_SuccessfulUpdate() throws Exception {
+		mockMvc.perform(get("/owners/1/pets/1/edit"))
+		.andExpect(model().attributeExists("pet"))
+		.andExpect(status().isOk());
+	}
+
+	@Test
+	public void Given_SendingPOSTRequest_When_ProcessEditForm_Then_FailedUpdate() throws Exception {
+		List<PetType> pets = new ArrayList<>();
+
+		PetType fish = new PetType();
+		fish.setName("Fish");
+
+		PetType mouse = new PetType();
+		fish.setName("Mouse");
+
+		pets.add(this.petType);
+		pets.add(fish);
+		pets.add(mouse);
+
+		when(petRepository.findPetTypes()).thenReturn(pets);
+
+		mockMvc.perform(post("/owners/1/pets/1/edit")
+		.param("type", "Dog")
+		.param("name", "Snowy")
+		.param("birthDate", "2020-08-08"))
+		.andExpect(status().is3xxRedirection());
+	}
+
+	@Test
+	void Given_SendingPOSTRequest_When_ProcessEditForm_Then_SuccessfulCreation() throws Exception {
+		mockMvc.perform(post("/owners/1/pets/1/edit")
+		.param("name", "Snowy")
+		.param("type", "Dog")
+		.param("birthDate", "2020-08-08"))
+		.andExpect(status().is3xxRedirection());
+	}
+
+	@Test
+	void Given_SendingPOSTRequest_When_ProcessEditForm_Then_FailedConnection() throws Exception {
+		mockMvc.perform(post("/owners/1/pets/1/edit")
+		.param("birthDate", "2020-08-08")
+		.param("name", "Snowy"))
+		.andExpect(model().attributeHasNoErrors("owner"))
+		.andExpect(model().attributeHasErrors("pet"))
+		.andExpect(status().isOk());
+	}
 }
