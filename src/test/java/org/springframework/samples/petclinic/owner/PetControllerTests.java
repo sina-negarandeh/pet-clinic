@@ -66,4 +66,32 @@ class PetControllerTests {
 		when(this.owners.findById(anyInt())).thenReturn(this.owner);
 		when(this.petRepository.findPetTypes()).thenReturn(Lists.newArrayList(this.petType));
 	}
+
+	@Test
+	void Given_SendingGETRequest_When_InitFormCreation_Then_SuccessfulConnection() throws Exception {
+		mockMvc.perform(get("/owners/1/pets/new"))
+		.andExpect(model().attributeExists("pet"))
+		.andExpect(status().isOk());
+	}
+
+	@Test
+	void Given_SendingPOSTRequest_When_ProcessFormCreation_Then_SuccessfulCreation() throws Exception {
+		mockMvc.perform(post("/owners/1/pets/new")
+		.param("type", "Dog")
+		.param("name", "Snowy")
+		.param("birthDate", "2020-08-08"))
+		.andExpect(status().is3xxRedirection());
+	}
+
+	@Test
+	void Given_SendingPOSTRequest_When_ProcessFormCreation_Then_FailedConnection() throws Exception {
+		mockMvc.perform(post("/owners/1/pets/new")
+		.param("name", "Snowy")
+		.param("birthDate", "2020-08-08"))
+		.andExpect(model().attributeHasFieldErrors("pet", "type"))
+		.andExpect(model().attributeHasFieldErrorCode("pet", "type", "required"))
+		.andExpect(model().attributeHasErrors("pet"))
+		.andExpect(model().attributeHasNoErrors("owner"))
+		.andExpect(status().isOk());
+	}
 }
