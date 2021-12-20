@@ -3,9 +3,7 @@ package org.springframework.samples.petclinic.utility;
 import org.junit.jupiter.api.*;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.samples.petclinic.owner.Pet;
-import org.springframework.samples.petclinic.owner.PetType;
 import org.springframework.samples.petclinic.visit.Visit;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -14,8 +12,6 @@ import java.time.LocalDate;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.same;
-import static org.mockito.Mockito.when;
 
 public class PriceCalculatorTest {
 	private PriceCalculator priceCalculator = new PriceCalculator();
