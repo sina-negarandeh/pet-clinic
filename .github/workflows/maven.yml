@@ -25,4 +25,4 @@ jobs:
     - name: Compile Tests
       run: mvn compiler:testCompile
     - name: Run BDD Tests
-      run: mvn -Dtest=”bdd.BDDEntryPointAcceptanceTest”test
+      run: mvn -Dtest="bdd.BDDEntryPointAcceptanceTest"test
