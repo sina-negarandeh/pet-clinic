@@ -22,7 +22,9 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+      working-directory: ../../
     - name: Compile Tests
       run: mvn compiler:testCompile
     - name: Run BDD Tests
       run: mvn -Dtest="bdd.BDDEntryPointAcceptanceTest"test
+      working-directory: ../../
